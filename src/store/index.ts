@@ -1,5 +1,4 @@
 import { configureStore } from '@reduxjs/toolkit'
-import cakeReducer from '../store/CakeSlice/cakeSlice'
 import addressReducer from './AddressSlice/addressSlice'
 import basicDetailsReducer from './BasicDetailsSlice/BasicDetailsSlice'
 import singleFileUploadReducer from './SingleFileUploadSlice/SingleFileUploadSlice'
@@ -11,7 +10,6 @@ import stageReducer from './StageSlice/StageSlice'
 
 const store = configureStore({
   reducer: {
-    cake: cakeReducer,
     address:addressReducer,
     basicdetails:basicDetailsReducer,
     singleFileUpload: singleFileUploadReducer,
