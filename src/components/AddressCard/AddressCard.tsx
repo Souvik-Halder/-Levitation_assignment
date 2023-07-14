@@ -1,10 +1,10 @@
 import {useState} from 'react'
-import {addressHandler} from '../../store/AddressSlice/AddressSlice'
+import {addressHandler} from '../../store/AddressSlice/addressSlice'
 
 import {  useAppDispatch } from '../../hooks/index'
 import DetailsHeading from '../DetailsHeading/DetailsHeading';
 import { toast } from 'react-hot-toast';
-import { storeGeoLocation } from '../../store/LocationSlice/LocationSlice';
+import { storeGeoLocation } from '../../store/LocationSlice/locationSlice';
 interface AddressCardProps {
     onNext: () => void;
     // Add other props here
