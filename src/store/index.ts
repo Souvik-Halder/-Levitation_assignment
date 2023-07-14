@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import cakeReducer from '../store/CakeSlice/cakeSlice'
-import addressReducer from './AddressSlice/AddressSlice'
+import addressReducer from './AddressSlice/addressSlice'
 import basicDetailsReducer from './BasicDetailsSlice/BasicDetailsSlice'
 import singleFileUploadReducer from './SingleFileUploadSlice/SingleFileUploadSlice'
 import multipleFileUploadReducer from './MultiFileUploadSlice/MultipleFileUploadSlice'
 import signInReducer from './SignInSlice/SignInSlice'
-import locationReducer from './LocationSlice/LocationSlice'
+import locationReducer from './LocationSlice/locationSlice'
 import stageReducer from './StageSlice/StageSlice'
 
 
