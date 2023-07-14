@@ -52,10 +52,10 @@ This application is also deployed to Render[&nbsp;Live Demo](https://levitation-
   
 ## API Reference
 
-The application fetches chat data from the following API:
+The application fetches form data from the following API:
 
 https
-  `https://levitation-assignment-app.onrender.com`
+  `https://x8ki-letl-twmt.n7.xano.io/apidoc:XooRuQbs/`
 
 
 
