@@ -35,7 +35,7 @@ const StepLogin: React.FC<StepLoginProps> = () =>{
           padding: '16px',
           color: '#713200',
         },
-        icon: '📱',
+        icon: '🥳',
       });
 
       setTimeout(()=>{

@@ -6,6 +6,7 @@ import singleFileUploadReducer from './SingleFileUploadSlice/SingleFileUploadSli
 import multipleFileUploadReducer from './MultiFileUploadSlice/MultipleFileUploadSlice'
 import signInReducer from './SignInSlice/SignInSlice'
 import locationReducer from './LocationSlice/LocationSlice'
+import stageReducer from './StageSlice/StageSlice'
 
 
 const store = configureStore({
@@ -16,7 +17,8 @@ const store = configureStore({
     singleFileUpload: singleFileUploadReducer,
     multipleFileUpload:multipleFileUploadReducer,
     auth:signInReducer,
-    location:locationReducer
+    location:locationReducer,
+    stage:stageReducer
   }
 })
 

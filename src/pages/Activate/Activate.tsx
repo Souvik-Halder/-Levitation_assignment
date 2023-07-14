@@ -7,6 +7,9 @@ import StepStatus from '../Steps/StepStatus/StepStatus';
 import { useNavigate } from 'react-router-dom';
 import ProgressBar from '../../components/ProgressBar/ProgressBar';
 import toast, { Toaster } from 'react-hot-toast'
+import Logout from '../../components/Logout/Logout';
+import { useAppDispatch, useAppSelector } from '../../hooks';
+import { decreaseStage, increaseStage } from '../../store/StageSlice/StageSlice';
 interface Steps {
   [key: number]: React.ComponentType<StepProps>;
 }
@@ -29,18 +32,20 @@ const Activate = (): JSX.Element => {
 
   
   const navigate=useNavigate()
-
+  const [step, setStep] = useState<number>(1);
 useEffect(()=>{
   if(localStorage.getItem('token')===null){
     console.log(localStorage.getItem('token'))
     navigate('/')
+    const {stage}=useAppSelector(state=>state.stage)
+    setStep(stage)
   }
-},[navigate])
+},[navigate,step])
 
 
-  const [step, setStep] = useState<number>(1);
+ 
   const StepComponent: React.ComponentType<StepProps> = steps[step];
-
+const dispatch=useAppDispatch()
   function onNext(): void {
     if(step===5){
       toast.error('You can\'t go next from this step', {
@@ -55,6 +60,7 @@ useEffect(()=>{
     }
     setStep((prevStep) => prevStep + 1);
   }
+
   function onPrev(): void {
     if(step===1){
       toast.error('You can\'t go back from this step', {
@@ -67,7 +73,7 @@ useEffect(()=>{
       });
       return
     }
-
+      dispatch(decreaseStage())
     setStep((prevStep) => prevStep - 1);
   }
 
@@ -79,7 +85,10 @@ useEffect(()=>{
     <div  className="mx-auto flex min-h-screen w-full flex-col items-center justify-center bg-gray-900 text-white">
 
 <ProgressBar value={step}/>
+<Logout/>
       <StepComponent onNext={onNext} />
+ 
+
 
  <div className='flex flex-wrap  sm:justify-center justify-center  items-center mb-14 gap-10'>
   <div>

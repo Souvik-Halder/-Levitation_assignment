@@ -39,6 +39,7 @@ const Authenticate = (): JSX.Element => {
       <Toaster position="top-center"
   reverseOrder={false}
 />
+
       <StepComponent onNext={onNext} />
     </>
   );
