@@ -6,7 +6,7 @@ const StepMultiFileUpload = () => {
     <div>
          <FileProvider>
       <div>
-        <h1>Multiple File Upload Example</h1>
+        
         <MultiFileUploadComponent />
       </div>
     </FileProvider>

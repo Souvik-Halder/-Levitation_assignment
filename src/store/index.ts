@@ -5,6 +5,8 @@ import basicDetailsReducer from './BasicDetailsSlice/BasicDetailsSlice'
 import singleFileUploadReducer from './SingleFileUploadSlice/SingleFileUploadSlice'
 import multipleFileUploadReducer from './MultiFileUploadSlice/MultipleFileUploadSlice'
 import signInReducer from './SignInSlice/SignInSlice'
+import locationReducer from './LocationSlice/LocationSlice'
+
 
 const store = configureStore({
   reducer: {
@@ -13,7 +15,8 @@ const store = configureStore({
     basicdetails:basicDetailsReducer,
     singleFileUpload: singleFileUploadReducer,
     multipleFileUpload:multipleFileUploadReducer,
-    auth:signInReducer
+    auth:signInReducer,
+    location:locationReducer
   }
 })
 

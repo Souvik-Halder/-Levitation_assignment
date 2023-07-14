@@ -3,13 +3,14 @@ import {Link, useNavigate} from 'react-router-dom';
 import {  useAppDispatch } from '../../../hooks/index'
 import { signInHandler } from '../../../store/SignInSlice/SignInSlice';
 import { postSignIn } from '../../../http';
+import { toast } from 'react-hot-toast';
 interface StepLoginProps {
     onNext: () => void;
     // Add other props here
   }
 
 
-const StepLogin: React.FC<StepLoginProps> = ({ onNext }) =>{
+const StepLogin: React.FC<StepLoginProps> = () =>{
 
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -28,7 +29,20 @@ const StepLogin: React.FC<StepLoginProps> = ({ onNext }) =>{
       const response =await postSignIn(email,password);
       console.log(response.data)
       localStorage.setItem('token',response.data.authToken)
-       navigate('/activate')
+      toast.success('Logged In  Successfully', {
+        style: {
+          border: '1px solid #713200',
+          padding: '16px',
+          color: '#713200',
+        },
+        icon: '📱',
+      });
+
+      setTimeout(()=>{
+        navigate('/activate');
+      }
+      ,2000)
+
     }
 
   return (
@@ -38,7 +52,7 @@ const StepLogin: React.FC<StepLoginProps> = ({ onNext }) =>{
   className="mx-auto flex min-h-screen w-full items-center justify-center bg-gray-900 text-white"
 >
 
-  <div className="flex w-[30rem] flex-col space-y-10">
+  <div className="flex w-[20rem] flex-col space-y-10">
     <div className="text-center text-4xl font-medium">Sign In</div>
 
     <div
@@ -72,10 +86,10 @@ const StepLogin: React.FC<StepLoginProps> = ({ onNext }) =>{
       LOG IN
     </button>
 
-    <a
-      href="#"
+    <Link
+      to={'/forgot'}
       className="transform text-center font-semibold text-gray-500 duration-300 hover:text-gray-300"
-      >FORGOT PASSWORD?</a>
+      >FORGOT PASSWORD?</Link>
 
  
 </div>

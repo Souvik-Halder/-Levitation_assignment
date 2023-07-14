@@ -5,6 +5,7 @@ import './App.css'
 import Activate from './pages/Activate/Activate'
 import Authenticate from './pages/Authenticate/Authenticate'
 import { CakeView } from './store/CakeSlice/cakeView'
+import ForgotPassword from './pages/ForgotPassword/ForgotPassword'
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
   <BrowserRouter>
   <Routes>
   
-   
+   <Route path='/forgot' element={<ForgotPassword/>}/>
     <Route path='/' element={<Authenticate/>}/>
     <Route path='/activate' element={<Activate/>}/>
 

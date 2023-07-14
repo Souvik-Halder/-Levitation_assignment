@@ -1,6 +1,8 @@
 import React from 'react'
 import {  useAppDispatch } from '../../../hooks/index'
 import { basicDetailsHandler } from '../../../store/BasicDetailsSlice/BasicDetailsSlice';
+import DetailsHeading from '../../../components/DetailsHeading/DetailsHeading';
+import { toast } from 'react-hot-toast';
 
 interface StepBasicDetailsProps {
     onNext: () => void;
@@ -16,7 +18,14 @@ interface StepBasicDetailsProps {
       const handleSubmit = () => {
         console.log(username,email,phone)
         dispatch(basicDetailsHandler({userName:username,phone:parseInt(phone),email:email}))
-        
+        toast.success('Basic Details Saved Successfully , Now go to Next', {
+          style: {
+            border: '1px solid #713200',
+            padding: '16px',
+            color: '#713200',
+          },
+         icon: '👏',
+        });
       }
       
     const handleUsername = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -38,8 +47,10 @@ interface StepBasicDetailsProps {
 <div
   className="mx-auto flex min-h-screen w-full items-center justify-center bg-gray-900 text-white"
 >
+  
 
-  <div className="flex w-[30rem] flex-col space-y-10">
+  <div className="flex w-[20rem] flex-col space-y-10">
+  <DetailsHeading value='Basic Details Form'/>
     <div className="text-center text-4xl font-medium">Basic Details Form</div>
 
     <div

@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import StepLogin from '../Steps/StepLogin/StepLogin';
-import StepBasicDetails from '../Steps/StepBasicDetails/StepBasicDetails';
+import { useNavigate } from 'react-router-dom';
+import {  Toaster } from 'react-hot-toast';
 
 interface Steps {
   [key: number]: React.ComponentType<StepProps>;
@@ -13,7 +14,7 @@ interface StepProps {
 
 const steps: Steps = {
   1: StepLogin,
-  2: StepBasicDetails
+ 
 };
 
 const Authenticate = (): JSX.Element => {
@@ -24,8 +25,20 @@ const Authenticate = (): JSX.Element => {
     setStep((prevStep) => prevStep + 1);
   }
 
+  const navigate=useNavigate()
+
+  useEffect(()=>{
+    if(localStorage.getItem('token')!==null){
+      console.log(localStorage.getItem('token'))
+      navigate('/activate');
+    }
+  },[navigate])
+
   return (
     <>
+      <Toaster position="top-center"
+  reverseOrder={false}
+/>
       <StepComponent onNext={onNext} />
     </>
   );
