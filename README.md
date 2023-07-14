@@ -1,3 +1,5 @@
+<img width="493" alt="Screenshot 2023-07-14 175328" src="https://github.com/Souvik-Halder/-Levitation_assignment/assets/83994461/bc0d9a75-2e2e-44f7-b24f-859b2905ff7e">
+![Uploading Screenshot 2023-07-14 175319.png…]()
 # Levitation ReactJs Assignment
 
 This project entails creating single pages coin data fetching application which implements an authentication and a form submission feature
@@ -65,6 +67,8 @@ Client: React,Tailwind,TypeScript
 
 ## Snapshot
 
+![Uploading Screenshot 2023-07-14 175304.png…]()
+![Uploading Screenshot 2023-07-14 175253.png…]()
 
 
 
