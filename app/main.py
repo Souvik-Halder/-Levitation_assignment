@@ -24,7 +24,7 @@ def main():
             compressed_data = f.read()
             decompressed_data = decompress(compressed_data)
             content=decompressed_data.split(b'\x00', 1)[1]
-            print(f"{content.decode()}")
+            print(f"{content.decode()}", end="")
 
     else:
         raise RuntimeError(f"Unknown command #{command}")
